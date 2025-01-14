@@ -86,7 +86,7 @@ class ModelResponse(BaseModel):
 
 
 class RequestResponseFormat(BaseModel):
-    type: Literal["text", "json_object"] = "text"
+    type: Literal["text", "json_object", "ebnf"] = "text"
     json_schema: Optional[str] = Field(default=None, alias="schema")
     """This field is named json_schema instead of schema because BaseModel defines a method called
     schema. During construction of RequestResponseFormat, key "schema" still should be used:
